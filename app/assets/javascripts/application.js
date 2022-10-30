@@ -31,6 +31,11 @@ submit_message = function() {
   });
 };
 
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
+
+
 $(document).on('turbolinks:load', function(){
     
   $('.ui.dropdown').dropdown();
@@ -40,3 +45,4 @@ $(document).on('turbolinks:load', function(){
   submit_message();
   scroll_bottom();
 })
+
